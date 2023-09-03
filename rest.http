@@ -1,0 +1,56 @@
+
+@rootApi = http://localhost:8000
+@userApi = {{rootApi}}/api/v1/user
+@burrowApi = {{rootApi}}/api/v1/burrow
+@bookApi = {{rootApi}}/api/v1/book
+
+
+### server testing
+GET  {{rootApi}}
+
+# ======== user api
+### Get user
+GET {{userApi}}
+
+### crate  user in db
+POST {{userApi}}
+Content-Type: application/json
+
+{
+    "role": "admin",
+    "fName": "Same",
+    "lName": "Smith",
+    "phone": "09876",
+    "address": "Somewhere in Sydney",
+    "email": "sam@esmail",
+    "password": "12345Mn$6"
+}
+
+# ============ Book api 
+### fetch all books
+GET {{bookApi}}
+Authorization: 64e7edbe7d781d5cf0ab4b82
+
+
+# ======== burrow api
+
+### fetch
+
+GET  {{burrowApi}}
+Authorization: 64e7edbe7d781d5cf0ab4b82
+
+
+### create new burrow record
+
+POST {{burrowApi}}
+Content-Content-Type: application/json
+
+{
+    "bookId":"jlhlj",
+    "BookName":"Amy",
+    "thumbnail":"http://..",
+    "userId":"dkhflshf",
+    "userName":"how to code",
+"returnDate":"2023-12-25"
+}
+
